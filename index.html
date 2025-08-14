@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senha</title>
+    <title>Gerador de Senhas com Histórico</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,6 +18,8 @@
         <div class="conteudo-senha">
             <label for="senha">Senha</label>
             <input name="senha" type="text" id="campo-senha" readonly>
+            <button id="copiar-senha" class="botao-copiar">Copiar</button>
+            <button id="gerar-nova-senha" class="botao-gerar">Gerar Nova</button>
         </div>
         <div class="parametro">
             <h3 class="parametro-titulo">Personalize sua senha</h3>
@@ -62,7 +64,31 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Seção do Histórico de Senhas -->
+        <div class="historico">
+            <h3 class="historico-titulo">Histórico de Senhas</h3>
+            <div class="historico-controles">
+                <button id="limpar-historico" class="botao-limpar">Limpar Histórico</button>
+                <button id="exportar-historico" class="botao-exportar">Exportar</button>
+            </div>
+            <div class="historico-lista" id="historico-lista">
+                <p class="historico-vazio">Nenhuma senha gerada ainda.</p>
+            </div>
+        </div>
     </section>
+    
+    <!-- Modal de confirmação -->
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-conteudo">
+            <h4>Confirmar ação</h4>
+            <p id="modal-texto">Tem certeza que deseja limpar todo o histórico?</p>
+            <div class="modal-botoes">
+                <button id="modal-cancelar" class="botao-cancelar">Cancelar</button>
+                <button id="modal-confirmar" class="botao-confirmar">Confirmar</button>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 
